@@ -11,7 +11,8 @@ import Foundation
 class UdacityClient: NSObject {
     //MARK: Properties
     var session = NSURLSession.sharedSession()
-    var accountKey: Int?
+    //var accountKey:String?
+    var clientUser: UdacityUser?
     
     override init(){
         super.init()
@@ -62,7 +63,7 @@ class UdacityClient: NSObject {
     }
     
     //MARK: Helpers
-    private func subtituteKeyInMethod(method: String, key: String, value: String) -> String? {
+    func subtituteKeyInMethod(method: String, key: String, value: String) -> String? {
         if method.rangeOfString("<\(key)>") != nil {
             return method.stringByReplacingOccurrencesOfString("<\(key)>", withString: value)
         }

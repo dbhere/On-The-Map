@@ -17,6 +17,7 @@
 		355910A21D321F30002F20BD /* UdacityUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910A11D321F30002F20BD /* UdacityUser.swift */; };
 		355910A41D321FF1002F20BD /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910A31D321FF1002F20BD /* UdacityClient.swift */; };
 		355910A61D322008002F20BD /* UdacityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910A51D322008002F20BD /* UdacityConstants.swift */; };
+		355910AB1D3339A6002F20BD /* UdacityConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910AA1D3339A6002F20BD /* UdacityConvenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		355910A11D321F30002F20BD /* UdacityUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityUser.swift; sourceTree = "<group>"; };
 		355910A31D321FF1002F20BD /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		355910A51D322008002F20BD /* UdacityConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConstants.swift; sourceTree = "<group>"; };
+		355910AA1D3339A6002F20BD /* UdacityConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConvenience.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				355910A11D321F30002F20BD /* UdacityUser.swift */,
 				355910A31D321FF1002F20BD /* UdacityClient.swift */,
 				355910A51D322008002F20BD /* UdacityConstants.swift */,
+				355910AA1D3339A6002F20BD /* UdacityConvenience.swift */,
 			);
 			name = Udacity;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				355910A21D321F30002F20BD /* UdacityUser.swift in Sources */,
 				355910761D321969002F20BD /* ViewController.swift in Sources */,
 				355910741D321969002F20BD /* AppDelegate.swift in Sources */,
+				355910AB1D3339A6002F20BD /* UdacityConvenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

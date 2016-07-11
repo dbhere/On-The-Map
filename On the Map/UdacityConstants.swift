@@ -22,11 +22,19 @@ extension UdacityClient{
         static let UserId = "user_id"
     }
     
+    struct JSONBodyKeys {
+        static let Username = "username"
+        static let Password = "password"
+    }
+    
     struct JSONResponseKeys {
+        static let Account: String = "account"
         static let User: String = "user"
         static let AccountKey: String = "key"
         static let LastName: String = "last_name"
         static let FirstName: String = "first_name"
+        static let Session: String = "session"
+        static let Id: String = "id"
     }
 
 }
