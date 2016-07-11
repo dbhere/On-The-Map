@@ -82,12 +82,17 @@
                                     <constraint firstItem="AXb-tT-ilO" firstAttribute="height" secondItem="lwh-fK-wpL" secondAttribute="height" id="mLW-0g-dfC"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ERg-fl-acr">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5804301264268954" blue="0.077265691700052375" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="HRx-Yx-JQU" secondAttribute="trailing" id="4IU-IG-7PK"/>
                             <constraint firstItem="HRx-Yx-JQU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="CEn-wm-7wn"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HRx-Yx-JQU" secondAttribute="bottom" constant="40" id="EzL-U7-pH7"/>
+                            <constraint firstItem="ERg-fl-acr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qoo-T2-af4"/>
+                            <constraint firstItem="ERg-fl-acr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bmm-Rz-wCl"/>
                             <constraint firstItem="HRx-Yx-JQU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="o1s-uK-KYJ"/>
                         </constraints>
                         <variation key="default">
@@ -95,13 +100,23 @@
                                 <exclude reference="EzL-U7-pH7"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Wfq-BV-wKv" appends="YES" id="fOJ-Br-7xu"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="ERg-fl-acr" id="VJc-Sc-fvH"/>
+                        <outlet property="loginButton" destination="lwh-fK-wpL" id="E7w-FB-PEg"/>
                         <outlet property="passwordTextField" destination="AXb-tT-ilO" id="fll-nt-oxz"/>
                         <outlet property="usernameTextField" destination="NbR-4l-tqV" id="j9R-A8-MkI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Wfq-BV-wKv">
+                    <connections>
+                        <action selector="userDidTapView" destination="BYZ-38-t0r" id="pFX-TZ-dqf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1406" y="-554"/>
         </scene>
