@@ -25,8 +25,8 @@ extension UdacityClient {
         }
     }
     
-    func getPublicUserData(userId: String, completionHandlerForGetPublicUserData:(success: Bool, udacityUser: UdacityUser!, error: NSError?) -> Void){
-        let newMethod = subtituteKeyInMethod(Methods.GetUserData, key: URLKeys.UserId, value: userId)!
+    func getPublicUserData(accountKey: String, completionHandlerForGetPublicUserData:(success: Bool, udacityUser: UdacityUser!, error: NSError?) -> Void){
+        let newMethod = subtituteKeyInMethod(Methods.GetUserData, key: URLKeys.UserId, value: accountKey)!
         taskForGetMethod(newMethod) { (result, error) in
             guard error == nil else {
                 completionHandlerForGetPublicUserData(success: false, udacityUser: nil, error: error)

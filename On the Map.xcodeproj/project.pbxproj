@@ -18,6 +18,8 @@
 		355910A41D321FF1002F20BD /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910A31D321FF1002F20BD /* UdacityClient.swift */; };
 		355910A61D322008002F20BD /* UdacityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910A51D322008002F20BD /* UdacityConstants.swift */; };
 		355910AB1D3339A6002F20BD /* UdacityConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910AA1D3339A6002F20BD /* UdacityConvenience.swift */; };
+		355910AD1D338446002F20BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910AC1D338446002F20BD /* LoginViewController.swift */; };
+		355910AF1D3399EF002F20BD /* PinsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910AE1D3399EF002F20BD /* PinsMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		355910A31D321FF1002F20BD /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		355910A51D322008002F20BD /* UdacityConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConstants.swift; sourceTree = "<group>"; };
 		355910AA1D3339A6002F20BD /* UdacityConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConvenience.swift; sourceTree = "<group>"; };
+		355910AC1D338446002F20BD /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		355910AE1D3399EF002F20BD /* PinsMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				355910A71D333806002F20BD /* Model */,
 				355910731D321969002F20BD /* AppDelegate.swift */,
 				355910751D321969002F20BD /* ViewController.swift */,
+				355910AC1D338446002F20BD /* LoginViewController.swift */,
+				355910AE1D3399EF002F20BD /* PinsMapViewController.swift */,
 				355910771D321969002F20BD /* Main.storyboard */,
 				3559107A1D321969002F20BD /* Assets.xcassets */,
 				3559107C1D321969002F20BD /* LaunchScreen.storyboard */,
@@ -229,6 +235,7 @@
 				TargetAttributes = {
 					3559106F1D321969002F20BD = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = BCW8MN39TF;
 					};
 					355910831D321969002F20BD = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -292,10 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				355910AD1D338446002F20BD /* LoginViewController.swift in Sources */,
 				355910A41D321FF1002F20BD /* UdacityClient.swift in Sources */,
 				355910A61D322008002F20BD /* UdacityConstants.swift in Sources */,
 				355910A21D321F30002F20BD /* UdacityUser.swift in Sources */,
 				355910761D321969002F20BD /* ViewController.swift in Sources */,
+				355910AF1D3399EF002F20BD /* PinsMapViewController.swift in Sources */,
 				355910741D321969002F20BD /* AppDelegate.swift in Sources */,
 				355910AB1D3339A6002F20BD /* UdacityConvenience.swift in Sources */,
 			);
@@ -439,10 +448,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "On the Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hhhotdog.On-the-Map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -450,10 +462,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "On the Map/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hhhotdog.On-the-Map";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -522,6 +537,7 @@
 				3559109A1D321969002F20BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3559109B1D321969002F20BD /* Build configuration list for PBXNativeTarget "On the MapTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +546,7 @@
 				3559109D1D321969002F20BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3559109E1D321969002F20BD /* Build configuration list for PBXNativeTarget "On the MapUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +555,7 @@
 				355910A01D321969002F20BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
