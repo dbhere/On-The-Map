@@ -45,11 +45,18 @@ class LoginViewController: UIViewController {
                 }
                 return
             }
-            let pinsMapVC = self.storyboard?.instantiateViewControllerWithIdentifier("PinsMapViewController") as! PinsMapViewController
-            pinsMapVC.accountKey = accountKey
+            UdacityClient.sharedInstance().getPublicUserData(accountKey) { (success, udacityUser, error) in
+                guard success == true else {
+                    self.displayError(error!.localizedDescription)
+                    return
+                }
+                UdacityClient.sharedInstance().clientUser = udacityUser
+            }
+            
+            let pinsTabBarVC = self.storyboard?.instantiateViewControllerWithIdentifier("PinsTabBarViewController") as! UITabBarController
             dispatch_async(dispatch_get_main_queue()){
                 self.setUIEnabled(true)
-                self.presentViewController(pinsMapVC, animated: true, completion: nil)
+                self.presentViewController(pinsTabBarVC, animated: true, completion: nil)
             }
         }
     }

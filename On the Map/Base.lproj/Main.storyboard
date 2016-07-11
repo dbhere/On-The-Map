@@ -146,24 +146,12 @@
                         <constraints>
                             <constraint firstItem="nTF-Sh-Phf" firstAttribute="top" secondItem="cin-do-Nax" secondAttribute="bottom" id="K5j-92-LB9"/>
                             <constraint firstItem="nTF-Sh-Phf" firstAttribute="leading" secondItem="doX-rh-Es9" secondAttribute="leading" id="Ka3-Wq-hOK"/>
-                            <constraint firstItem="nTF-Sh-Phf" firstAttribute="top" secondItem="YfP-kS-CrT" secondAttribute="bottom" id="Nir-PX-mAF"/>
                             <constraint firstItem="UMJ-5z-Pnc" firstAttribute="top" secondItem="nTF-Sh-Phf" secondAttribute="bottom" id="OEi-nh-6qh"/>
-                            <constraint firstItem="nTF-Sh-Phf" firstAttribute="leading" secondItem="doX-rh-Es9" secondAttribute="leadingMargin" id="Vhu-3l-zxt"/>
                             <constraint firstItem="cin-do-Nax" firstAttribute="leading" secondItem="doX-rh-Es9" secondAttribute="leadingMargin" constant="-20" id="W8j-TG-8vf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cin-do-Nax" secondAttribute="trailing" constant="-20" id="ZRQ-PE-wTk"/>
                             <constraint firstAttribute="trailing" secondItem="nTF-Sh-Phf" secondAttribute="trailing" id="jE9-pt-kdj"/>
                             <constraint firstItem="cin-do-Nax" firstAttribute="top" secondItem="YfP-kS-CrT" secondAttribute="bottom" id="m57-p4-olr"/>
-                            <constraint firstItem="UMJ-5z-Pnc" firstAttribute="top" secondItem="nTF-Sh-Phf" secondAttribute="bottom" id="mz2-gz-lAk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nTF-Sh-Phf" secondAttribute="trailing" id="q0s-te-E65"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Nir-PX-mAF"/>
-                                <exclude reference="Vhu-3l-zxt"/>
-                                <exclude reference="q0s-te-E65"/>
-                                <exclude reference="mz2-gz-lAk"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="SbM-pv-UHr"/>
                     <connections>
@@ -178,7 +166,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="m4X-LV-VKP">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Fms-Gv-Ske" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="PinsTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="Fms-Gv-Ske" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="vrL-wZ-eKG">
                         <autoresizingMask key="autoresizingMask"/>
