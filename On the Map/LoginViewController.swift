@@ -9,21 +9,31 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    //MARK: Properties
+    var keyboardOnScreen: Bool = false
     //MARK: Outlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var udacityImageView: UIImageView!
     
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
         passwordTextField.delegate = self
+        setUIEnabled(true)
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         setUIEnabled(true)
+        subscribeToNotification(UIKeyboardWillShowNotification, selector: #selector(keyboardWillShow))
+        subscribeToNotification(UIKeyboardWillHideNotification, selector: #selector(keyboardWillHide))
+    }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromAllNotifications()
     }
     
     //MARK: Actions
@@ -86,6 +96,7 @@ class LoginViewController: UIViewController {
         if enabled{
             loginButton.alpha = 1.0
             activityIndicator.stopAnimating()
+            passwordTextField.text = ""
         }else {
             loginButton.alpha = 0.5
             activityIndicator.startAnimating()
@@ -96,6 +107,21 @@ class LoginViewController: UIViewController {
         if textField.isFirstResponder(){
             textField.resignFirstResponder()
         }
+    }
+    
+    //MARK: keyboard hide and show related functions
+    func keyboardWillShow(notification:NSNotification){
+        udacityImageView.hidden = true
+    }
+    func keyboardWillHide(notification:NSNotification){
+        udacityImageView.hidden = false
+    }
+    
+    private func subscribeToNotification(notification:String, selector:Selector){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: selector, name: notification, object: nil)
+    }
+    private func unsubscribeFromAllNotifications(){
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 }
 

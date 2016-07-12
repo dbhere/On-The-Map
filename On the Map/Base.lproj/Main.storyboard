@@ -21,17 +21,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HRx-Yx-JQU">
                                 <rect key="frame" x="20" y="40" width="560" height="369"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eAV-et-CNw">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" image="udacity" translatesAutoresizingMaskIntoConstraints="NO" id="iWe-yo-9WJ">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="156"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" image="udacity" translatesAutoresizingMaskIntoConstraints="NO" id="iWe-yo-9WJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="156"/>
-                                            </imageView>
-                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="156" id="rCy-z7-szg"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="156" id="Pg6-xG-KQn"/>
                                         </constraints>
-                                    </stackView>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Login to Udacity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEi-QF-WWG">
                                         <rect key="frame" x="0.0" y="166" width="560" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -108,6 +103,7 @@
                         <outlet property="activityIndicator" destination="ERg-fl-acr" id="VJc-Sc-fvH"/>
                         <outlet property="loginButton" destination="lwh-fK-wpL" id="E7w-FB-PEg"/>
                         <outlet property="passwordTextField" destination="AXb-tT-ilO" id="fll-nt-oxz"/>
+                        <outlet property="udacityImageView" destination="iWe-yo-9WJ" id="PMo-FN-0Gg"/>
                         <outlet property="usernameTextField" destination="NbR-4l-tqV" id="j9R-A8-MkI"/>
                     </connections>
                 </viewController>
