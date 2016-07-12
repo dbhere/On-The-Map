@@ -83,7 +83,8 @@ class ParseClient: NSObject {
             sendError("cannot find data.")
             return
         }
-        completionHandler(results: data, error: nil)
+        self.convertDataFromJSON(data
+            , completionHandlerForConvertData: completionHandler)
     }
     
     //MARK: Heplers
