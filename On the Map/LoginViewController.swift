@@ -82,9 +82,7 @@ class LoginViewController: UIViewController {
     //MARK: UIHelpers
     private func displayError(error: String){
         let alertVC = UIAlertController(title: nil, message: error, preferredStyle: .Alert)
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .Default) { (action) in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
         alertVC.addAction(dismissAction)
         self.presentViewController(alertVC, animated: true, completion: nil)
     }

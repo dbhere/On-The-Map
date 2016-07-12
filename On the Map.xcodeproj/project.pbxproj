@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		353044C01D34A006006C857E /* ParseConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353044BF1D34A006006C857E /* ParseConvenience.swift */; };
+		353044C31D34DBE6006C857E /* PinsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353044C21D34DBE6006C857E /* PinsTableViewController.swift */; };
 		355910741D321969002F20BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910731D321969002F20BD /* AppDelegate.swift */; };
-		355910761D321969002F20BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910751D321969002F20BD /* ViewController.swift */; };
 		355910791D321969002F20BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 355910771D321969002F20BD /* Main.storyboard */; };
 		3559107B1D321969002F20BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3559107A1D321969002F20BD /* Assets.xcassets */; };
 		3559107E1D321969002F20BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3559107C1D321969002F20BD /* LaunchScreen.storyboard */; };
@@ -45,9 +45,9 @@
 
 /* Begin PBXFileReference section */
 		353044BF1D34A006006C857E /* ParseConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseConvenience.swift; sourceTree = "<group>"; };
+		353044C21D34DBE6006C857E /* PinsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsTableViewController.swift; sourceTree = "<group>"; };
 		355910701D321969002F20BD /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		355910731D321969002F20BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		355910751D321969002F20BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		355910781D321969002F20BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3559107A1D321969002F20BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3559107D1D321969002F20BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -94,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		353044C11D34DBB0006C857E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				355910AC1D338446002F20BD /* LoginViewController.swift */,
+				355910AE1D3399EF002F20BD /* PinsMapViewController.swift */,
+				353044C21D34DBE6006C857E /* PinsTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		355910671D321969002F20BD = {
 			isa = PBXGroup;
 			children = (
@@ -117,11 +127,9 @@
 		355910721D321969002F20BD /* On the Map */ = {
 			isa = PBXGroup;
 			children = (
+				353044C11D34DBB0006C857E /* Controller */,
 				355910A71D333806002F20BD /* Model */,
 				355910731D321969002F20BD /* AppDelegate.swift */,
-				355910751D321969002F20BD /* ViewController.swift */,
-				355910AC1D338446002F20BD /* LoginViewController.swift */,
-				355910AE1D3399EF002F20BD /* PinsMapViewController.swift */,
 				355910771D321969002F20BD /* Main.storyboard */,
 				3559107A1D321969002F20BD /* Assets.xcassets */,
 				3559107C1D321969002F20BD /* LaunchScreen.storyboard */,
@@ -320,13 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				355910B21D34877C002F20BD /* StudentLocation.swift in Sources */,
+				353044C31D34DBE6006C857E /* PinsTableViewController.swift in Sources */,
 				353044C01D34A006006C857E /* ParseConvenience.swift in Sources */,
 				355910AD1D338446002F20BD /* LoginViewController.swift in Sources */,
 				355910B61D3488AE002F20BD /* ParseConstants.swift in Sources */,
 				355910A41D321FF1002F20BD /* UdacityClient.swift in Sources */,
 				355910A61D322008002F20BD /* UdacityConstants.swift in Sources */,
 				355910A21D321F30002F20BD /* UdacityUser.swift in Sources */,
-				355910761D321969002F20BD /* ViewController.swift in Sources */,
 				355910B41D34886F002F20BD /* ParseClient.swift in Sources */,
 				355910AF1D3399EF002F20BD /* PinsMapViewController.swift in Sources */,
 				355910741D321969002F20BD /* AppDelegate.swift in Sources */,

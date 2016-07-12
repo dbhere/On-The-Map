@@ -35,6 +35,12 @@ extension ParseClient{
         static let UniqueKey = "uniqueKey"
     }
     
+    struct ParameterKeys {
+        static let Limit = "limit"
+        static let skip = "skip"
+        static let order = "order"
+    }
+    
     struct JSONResponseKeys {
         static let Results = "results"
         static let FirstName = "firstName"
