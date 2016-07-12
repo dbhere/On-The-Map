@@ -11,6 +11,7 @@ import Foundation
 class ParseClient: NSObject {
     //MARK: Properties
     var session = NSURLSession.sharedSession()
+    var studentLocations: [StudentLocation]!
     
     override init() {
         super.init()

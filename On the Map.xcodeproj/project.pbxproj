@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		353044C01D34A006006C857E /* ParseConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353044BF1D34A006006C857E /* ParseConvenience.swift */; };
 		355910741D321969002F20BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910731D321969002F20BD /* AppDelegate.swift */; };
 		355910761D321969002F20BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910751D321969002F20BD /* ViewController.swift */; };
 		355910791D321969002F20BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 355910771D321969002F20BD /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		353044BF1D34A006006C857E /* ParseConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseConvenience.swift; sourceTree = "<group>"; };
 		355910701D321969002F20BD /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		355910731D321969002F20BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		355910751D321969002F20BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				355910B11D34877C002F20BD /* StudentLocation.swift */,
 				355910B31D34886F002F20BD /* ParseClient.swift */,
 				355910B51D3488AE002F20BD /* ParseConstants.swift */,
+				353044BF1D34A006006C857E /* ParseConvenience.swift */,
 			);
 			name = Parse;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				355910B21D34877C002F20BD /* StudentLocation.swift in Sources */,
+				353044C01D34A006006C857E /* ParseConvenience.swift in Sources */,
 				355910AD1D338446002F20BD /* LoginViewController.swift in Sources */,
 				355910B61D3488AE002F20BD /* ParseConstants.swift in Sources */,
 				355910A41D321FF1002F20BD /* UdacityClient.swift in Sources */,

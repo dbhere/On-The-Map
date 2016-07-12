@@ -25,6 +25,16 @@ extension ParseClient{
         static let UpdateStudentLocation = "StudentLocaion/<objectId>"
     }
     
+    struct JSONBodyKeys {
+        static let FirstName = "firstName"
+        static let LastName = "lastName"
+        static let Latitude = "latitude"
+        static let Longitude = "longitude"
+        static let MapString = "mapString"
+        static let MediaURL = "mediaURL"
+        static let UniqueKey = "uniqueKey"
+    }
+    
     struct JSONResponseKeys {
         static let Results = "results"
         static let FirstName = "firstName"
@@ -35,5 +45,6 @@ extension ParseClient{
         static let MediaURL = "mediaURL"
         static let ObjectId = "objectId"
         static let UniqueKey = "uniqueKey"
+        static let UpdatedAt = "updatedAt"
     }
 }
