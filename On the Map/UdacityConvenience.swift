@@ -13,12 +13,12 @@ extension UdacityClient {
         let jsonBody = "{\"udacity\": {\"\(JSONBodyKeys.Username)\":\"\(udacityAccount[JSONBodyKeys.Username]!)\", \"\(JSONBodyKeys.Password)\":\"\(udacityAccount[JSONBodyKeys.Password]!)\"}}"
         taskForPostMethod(Methods.Session, httpBody: jsonBody) { (result, error) in
             guard error == nil else{
-                completionHandlerForCreateASession(success: false, accountKey: nil,errorString: "login Failed.(create a session).")
+                completionHandlerForCreateASession(success: false, accountKey: nil,errorString: "Invalid Username or Password.")
                 return
             }
             guard let account = result[JSONResponseKeys.Account] as? [String: AnyObject], accountKey = account[JSONResponseKeys.AccountKey] as? String else {
                 print("cannot find key: \(JSONResponseKeys.AccountKey) in data: \(result)")
-                completionHandlerForCreateASession(success: false, accountKey: nil, errorString: "login Failed.(create a session).")
+                completionHandlerForCreateASession(success: false, accountKey: nil, errorString: "Invalid Username or Password.")
                 return
             }
             completionHandlerForCreateASession(success: true, accountKey: accountKey,errorString: nil)
@@ -49,7 +49,7 @@ extension UdacityClient {
                 return
             }
             guard let session = result[JSONResponseKeys.Session] as? [String: AnyObject], _ = session[JSONResponseKeys.Id] as? String else {
-                completionHandlerForLogOut(success: false, errorString: "cannot log out.")
+                completionHandlerForLogOut(success: false, errorString: "oop!. Cannot log out.")
                 return
             }
             completionHandlerForLogOut(success: true, errorString: nil)
