@@ -23,15 +23,19 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         parseClientSharedInstance = ParseClient.sharedInstance()
         udacityClientSahredInstance = UdacityClient.sharedInstance()
-        reloadUserLocation()
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: #selector(logout))
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(reloadUserLocation)),
-            UIBarButtonItem(image: UIImage(named: "pin"), style: .Plain, target: self, action: #selector(addNewPin))]
+            UIBarButtonItem(image: UIImage(named: "pin"), style: .Plain, target: self, action: #selector(addUserPin))]
+        reloadUserLocation()
     }
 
     //MARK: UIRelated
     func setUIEnabled(enabled: Bool){
+        for item in self.navigationItem.rightBarButtonItems! {
+            item.enabled = enabled
+        }
+        self.navigationItem.leftBarButtonItem?.enabled = enabled
         if enabled{
             activityIndicator.stopAnimating()
         } else {
@@ -62,7 +66,7 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: UserLocation
-    func addNewPin(){
+    func addUserPin(){
         //TODO: Add new pin
     }
     

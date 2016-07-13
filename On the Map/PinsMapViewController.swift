@@ -23,15 +23,18 @@ class PinsMapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         parseClientSharedInstance = ParseClient.sharedInstance()
         udacityClientSahredInstance = UdacityClient.sharedInstance()
-        reloadUserLocation()
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: #selector(logout))
         navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(reloadUserLocation)),
             UIBarButtonItem(image: UIImage(named: "pin"), style: .Plain, target: self, action: #selector(addUserPin))]
+        reloadUserLocation()
     }
     
     //MARK: UIRelated
     func setUIEnabled(enabled: Bool){
+        for item in self.navigationItem.rightBarButtonItems! {
+           item.enabled = enabled
+        }
+        self.navigationItem.leftBarButtonItem?.enabled = enabled
         if enabled {
             activityIndicator.stopAnimating()
         } else {
