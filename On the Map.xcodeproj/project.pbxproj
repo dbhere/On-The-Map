@@ -24,6 +24,7 @@
 		355910B21D34877C002F20BD /* StudentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910B11D34877C002F20BD /* StudentLocation.swift */; };
 		355910B41D34886F002F20BD /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910B31D34886F002F20BD /* ParseClient.swift */; };
 		355910B61D3488AE002F20BD /* ParseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910B51D3488AE002F20BD /* ParseConstants.swift */; };
+		35C3648C1D362084001903D8 /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C3648B1D362084001903D8 /* FindLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		355910B11D34877C002F20BD /* StudentLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentLocation.swift; sourceTree = "<group>"; };
 		355910B31D34886F002F20BD /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		355910B51D3488AE002F20BD /* ParseConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseConstants.swift; sourceTree = "<group>"; };
+		35C3648B1D362084001903D8 /* FindLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				355910AC1D338446002F20BD /* LoginViewController.swift */,
 				355910AE1D3399EF002F20BD /* PinsMapViewController.swift */,
+				35C3648B1D362084001903D8 /* FindLocationViewController.swift */,
 				353044C21D34DBE6006C857E /* PinsTableViewController.swift */,
 			);
 			name = Controller;
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C3648C1D362084001903D8 /* FindLocationViewController.swift in Sources */,
 				355910B21D34877C002F20BD /* StudentLocation.swift in Sources */,
 				353044C31D34DBE6006C857E /* PinsTableViewController.swift in Sources */,
 				353044C01D34A006006C857E /* ParseConvenience.swift in Sources */,
