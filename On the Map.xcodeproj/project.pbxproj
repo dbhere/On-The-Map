@@ -25,6 +25,7 @@
 		355910B41D34886F002F20BD /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910B31D34886F002F20BD /* ParseClient.swift */; };
 		355910B61D3488AE002F20BD /* ParseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910B51D3488AE002F20BD /* ParseConstants.swift */; };
 		35C3648C1D362084001903D8 /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C3648B1D362084001903D8 /* FindLocationViewController.swift */; };
+		35CE702D1D388FB500A0D0D9 /* ShareLinkWithLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CE702C1D388FB500A0D0D9 /* ShareLinkWithLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		355910B31D34886F002F20BD /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		355910B51D3488AE002F20BD /* ParseConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseConstants.swift; sourceTree = "<group>"; };
 		35C3648B1D362084001903D8 /* FindLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
+		35CE702C1D388FB500A0D0D9 /* ShareLinkWithLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLinkWithLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,9 @@
 			children = (
 				355910AC1D338446002F20BD /* LoginViewController.swift */,
 				355910AE1D3399EF002F20BD /* PinsMapViewController.swift */,
-				35C3648B1D362084001903D8 /* FindLocationViewController.swift */,
 				353044C21D34DBE6006C857E /* PinsTableViewController.swift */,
+				35CE702C1D388FB500A0D0D9 /* ShareLinkWithLocationViewController.swift */,
+				35C3648B1D362084001903D8 /* FindLocationViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				353044C31D34DBE6006C857E /* PinsTableViewController.swift in Sources */,
 				353044C01D34A006006C857E /* ParseConvenience.swift in Sources */,
 				355910AD1D338446002F20BD /* LoginViewController.swift in Sources */,
+				35CE702D1D388FB500A0D0D9 /* ShareLinkWithLocationViewController.swift in Sources */,
 				355910B61D3488AE002F20BD /* ParseConstants.swift in Sources */,
 				355910A41D321FF1002F20BD /* UdacityClient.swift in Sources */,
 				355910A61D322008002F20BD /* UdacityConstants.swift in Sources */,
