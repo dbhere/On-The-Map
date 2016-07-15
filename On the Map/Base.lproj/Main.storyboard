@@ -288,10 +288,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifz-Pb-3fQ">
-                                        <rect key="frame" x="0.0" y="125" width="600" height="395"/>
+                                        <rect key="frame" x="0.0" y="125" width="600" height="385"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Your Location Here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kYG-zB-J21">
-                                                <rect key="frame" x="8" y="8" width="584" height="379"/>
+                                                <rect key="frame" x="8" y="8" width="584" height="369"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -306,32 +306,45 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-dd-NJk">
-                                        <rect key="frame" x="0.0" y="530" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="520" width="600" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwT-0t-chX">
-                                                <rect key="frame" x="236" y="5" width="127" height="30"/>
+                                                <rect key="frame" x="236" y="10" width="127" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <state key="normal" title="  Find on the Map  "/>
+                                                <connections>
+                                                    <action selector="findOnTheMap" destination="vs8-5o-CNX" eventType="touchUpInside" id="JlE-bT-cPg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.79826600140000004" green="0.8487401832" blue="0.80676325209999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="vwT-0t-chX" firstAttribute="centerY" secondItem="o7g-dd-NJk" secondAttribute="centerY" constant="-5" id="KQJ-A6-58v"/>
-                                            <constraint firstAttribute="height" constant="50" id="Peh-nR-KMx"/>
+                                            <constraint firstAttribute="height" constant="60" id="Peh-nR-KMx"/>
                                             <constraint firstItem="vwT-0t-chX" firstAttribute="centerX" secondItem="o7g-dd-NJk" secondAttribute="centerX" id="S7D-sF-kwC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ARK-we-YlC">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.79826600140000004" green="0.8487401832" blue="0.80676325209999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PVh-SJ-I4V" firstAttribute="top" secondItem="7Br-2a-mch" secondAttribute="bottom" id="6QW-ma-3ui"/>
+                            <constraint firstItem="ARK-we-YlC" firstAttribute="centerY" secondItem="svM-tR-C21" secondAttribute="centerY" id="ByU-LX-yuw"/>
                             <constraint firstItem="GVu-8j-xLM" firstAttribute="top" secondItem="PVh-SJ-I4V" secondAttribute="bottom" id="lfr-Bg-DKj"/>
                             <constraint firstItem="PVh-SJ-I4V" firstAttribute="leading" secondItem="svM-tR-C21" secondAttribute="leading" id="nxg-ea-BVo"/>
                             <constraint firstAttribute="trailing" secondItem="PVh-SJ-I4V" secondAttribute="trailing" id="o7G-fJ-uAR"/>
+                            <constraint firstItem="ARK-we-YlC" firstAttribute="centerX" secondItem="svM-tR-C21" secondAttribute="centerX" id="tXc-JB-oXj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ARK-we-YlC" id="Ylm-Hn-7YG"/>
+                        <outlet property="findButton" destination="vwT-0t-chX" id="PrF-38-tB5"/>
+                        <outlet property="locationTextView" destination="kYG-zB-J21" id="ykV-uc-cJe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkv-KT-Nll" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

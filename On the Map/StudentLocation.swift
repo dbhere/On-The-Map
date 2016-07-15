@@ -34,4 +34,16 @@ struct StudentLocation {
         }
         return studentLocations
     }
+    
+    struct Constants {
+        static let FirstName = "firstName"
+        static let LastName = "lastName"
+        static let Latitude = "latitude"
+        static let Longitude = "longitude"
+        static let MapString = "mapString"
+        static let MediaURL = "mediaURL"
+        static let ObjectId = "objectId"
+        static let UniqueKey = "uniqueKey"
+        static let UpdatedAt = "updatedAt"
+    }
 }

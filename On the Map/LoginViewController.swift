@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
         usernameTextField.delegate = self
         passwordTextField.delegate = self
         setUIEnabled(true)
+        loginButton.layer.cornerRadius = 5
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
