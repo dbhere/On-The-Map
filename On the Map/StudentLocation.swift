@@ -7,7 +7,7 @@
 //
 
 struct StudentLocation {
-    let objectId: String
+    let objectId: String!
     let uniqueKey: String
     let firstName: String
     let lastName: String
@@ -17,7 +17,7 @@ struct StudentLocation {
     var longitude: Double
     
     init(dictionary: [String: AnyObject]){
-        self.objectId = dictionary[ParseClient.JSONResponseKeys.ObjectId] as! String
+        self.objectId = dictionary[ParseClient.JSONResponseKeys.ObjectId] as? String
         self.uniqueKey = dictionary[ParseClient.JSONResponseKeys.UniqueKey] as! String
         self.firstName = dictionary[ParseClient.JSONResponseKeys.FirstName] as! String
         self.lastName = dictionary[ParseClient.JSONResponseKeys.LastName] as! String
@@ -42,8 +42,7 @@ struct StudentLocation {
         static let Longitude = "longitude"
         static let MapString = "mapString"
         static let MediaURL = "mediaURL"
-        static let ObjectId = "objectId"
         static let UniqueKey = "uniqueKey"
-        static let UpdatedAt = "updatedAt"
+        static let ObjectId = "objectId"
     }
 }

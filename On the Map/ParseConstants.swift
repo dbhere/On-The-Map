@@ -22,7 +22,7 @@ extension ParseClient{
     
     struct Methods {
         static let StudentLocation = "/StudentLocation"
-        static let UpdateStudentLocation = "StudentLocaion/<objectId>"
+        static let UpdateStudentLocation = "/StudentLocation/<objectId>"
     }
     
     struct JSONBodyKeys {
