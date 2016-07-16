@@ -362,19 +362,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-se-EtC">
-                                <rect key="frame" x="273" y="550" width="53" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Submit"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iY-jR-SlF">
-                                <rect key="frame" x="541" y="20" width="51" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Rcx-dH-lYL">
                                 <rect key="frame" x="0.0" y="50" width="600" height="550"/>
                                 <subviews>
@@ -385,13 +372,35 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                     </textView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="U8B-ho-cpY">
                                         <rect key="frame" x="0.0" y="100" width="600" height="450"/>
                                     </mapView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvh-se-EtC">
+                                <rect key="frame" x="273" y="550" width="53" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="  Submit  "/>
+                                <connections>
+                                    <action selector="submitLocation" destination="BCH-Ua-eM1" eventType="touchUpInside" id="lmd-fK-5a8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iY-jR-SlF">
+                                <rect key="frame" x="541" y="20" width="51" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel" destination="BCH-Ua-eM1" eventType="touchUpInside" id="oBY-KL-TAp"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="BAf-p4-d6R">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.41447188000000001" green="0.69201417620000005" blue="0.8487401832" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -399,14 +408,24 @@
                             <constraint firstItem="1iY-jR-SlF" firstAttribute="top" secondItem="a6w-eX-Yxw" secondAttribute="bottom" id="45E-qz-2l2"/>
                             <constraint firstAttribute="trailing" secondItem="Rcx-dH-lYL" secondAttribute="trailing" id="9LJ-4q-hSG"/>
                             <constraint firstItem="Gw6-hu-H5h" firstAttribute="top" secondItem="cvh-se-EtC" secondAttribute="bottom" constant="20" id="Rak-ze-MQO"/>
+                            <constraint firstItem="BAf-p4-d6R" firstAttribute="centerX" secondItem="en2-Pj-yGE" secondAttribute="centerX" id="TcH-2u-lIz"/>
                             <constraint firstItem="Rcx-dH-lYL" firstAttribute="top" secondItem="1iY-jR-SlF" secondAttribute="bottom" id="Uzf-52-zeN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1iY-jR-SlF" secondAttribute="trailing" constant="-12" id="Zg1-oK-mUd"/>
                             <constraint firstItem="cvh-se-EtC" firstAttribute="centerX" secondItem="en2-Pj-yGE" secondAttribute="centerX" id="cEY-MQ-IWh"/>
+                            <constraint firstItem="BAf-p4-d6R" firstAttribute="centerY" secondItem="en2-Pj-yGE" secondAttribute="centerY" id="hlf-EA-gka"/>
                             <constraint firstAttribute="bottom" secondItem="Rcx-dH-lYL" secondAttribute="bottom" id="sMq-RM-qo9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="BAf-p4-d6R" id="61d-85-aGM"/>
+                        <outlet property="mapView" destination="U8B-ho-cpY" id="RXZ-eL-dui"/>
+                        <outlet property="submitButton" destination="cvh-se-EtC" id="YfO-cx-dqg"/>
+                        <outlet property="urlTextView" destination="Sbp-6j-fIj" id="isB-Ma-4vh"/>
+                        <segue destination="EYJ-BR-gCN" kind="unwind" identifier="backPinsView" unwindAction="backPinsView:" id="fto-hM-fd0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKm-Ii-o6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EYJ-BR-gCN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-158" y="-477"/>
         </scene>

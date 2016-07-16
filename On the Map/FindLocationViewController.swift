@@ -19,7 +19,7 @@ class FindLocationViewController: UIViewController {
     @IBOutlet weak var findButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    //MARK: Lifecycle
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         locationTextView.delegate = self
@@ -27,7 +27,7 @@ class FindLocationViewController: UIViewController {
         setUIEnabled(true)
     }
     
-    //MARK: Action
+    //MARK: - Action
     @IBAction func findOnTheMap() {
         if locationTextView.text == self.textPlaceHolder || locationTextView.text.isEmpty {
             alertUser("Must Enter a location.")
@@ -57,26 +57,28 @@ class FindLocationViewController: UIViewController {
                 return
             }
             
+            //pick the first mapItem
             let mapItem = response.mapItems[0]
             let coordinate = mapItem.placemark.coordinate
-            let userLocationDict = [StudentLocation.Constants.MapString: self.locationTextView.text,
-                StudentLocation.Constants.Latitude: String(coordinate.latitude),
-                StudentLocation.Constants.Longitude: String(coordinate.longitude)]
+            let userLocationDict:[String: AnyObject] = [StudentLocation.Constants.MapString: self.locationTextView.text,
+                StudentLocation.Constants.Latitude: Double(coordinate.latitude),
+                StudentLocation.Constants.Longitude: Double(coordinate.longitude)]
             
             dispatch_async(dispatch_get_main_queue(), { 
                 let shareLinkVC = self.storyboard?.instantiateViewControllerWithIdentifier("ShareLinkWithLocation") as! ShareLinkWithLocationViewController
                 shareLinkVC.userLocationDict = userLocationDict
                 shareLinkVC.objectId = self.objectId
+                shareLinkVC.userCoordinate = coordinate
                 self.presentViewController(shareLinkVC, animated: true, completion: nil)
             })
         }
     }
     
     @IBAction func cancel() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismissViewControllerAnimated(false, completion: nil)
     }
     
-    //MARK: UIHelpers
+    //MARK: - UIHelpers
     private func alertUser(errorString: String){
         let alertVC = UIAlertController(title: nil, message: errorString, preferredStyle: .Alert)
         let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
@@ -92,10 +94,9 @@ class FindLocationViewController: UIViewController {
             activityIndicator.startAnimating()
         }
     }
-    
-    
 }
 
+//MARK: - UITextViewDelegate
 extension FindLocationViewController: UITextViewDelegate {
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         if textView.text == self.textPlaceHolder{
@@ -115,12 +116,3 @@ extension FindLocationViewController: UITextViewDelegate {
         return true
     }
 }
-
-
-
-
-
-
-
-
-

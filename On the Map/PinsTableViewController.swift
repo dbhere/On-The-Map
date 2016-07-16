@@ -50,6 +50,11 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
         self.presentViewController(alertVC, animated: true, completion: nil)
     }
     
+    //MARK: Action
+    @IBAction func backPinsView(segue: UIStoryboardSegue){
+        self.reloadUserLocation()
+    }
+    
     // MARK: Udacity
     func logout(){
         udacityClientSahredInstance.logOutOfASession { (success, errorString) in

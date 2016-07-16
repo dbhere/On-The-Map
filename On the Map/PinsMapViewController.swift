@@ -49,6 +49,11 @@ class PinsMapViewController: UIViewController, MKMapViewDelegate {
         self.presentViewController(alertVC, animated: true, completion: nil)
     }
     
+    //MARK: Action
+    @IBAction func backPinsView(segue: UIStoryboardSegue){
+        self.reloadUserLocation()
+    }
+    
     // MARK: Udacity
     func logout(){
         UdacityClient.sharedInstance().logOutOfASession { (success, errorString) in
