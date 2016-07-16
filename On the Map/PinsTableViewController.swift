@@ -18,7 +18,7 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    //MARK: LifeCycle
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         parseClientSharedInstance = ParseClient.sharedInstance()
@@ -70,11 +70,56 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    // MARK: UserLocation
+    //MARK: - Add New Pin
     func addUserPin(){
-        //TODO: Add new pin
+        //check if the user has a pin
+        let parameters = [ParseClient.ParameterKeys.Where: "{\"\(ParseClient.ParameterKeys.UniqueKey)\": \"\(udacityClientSahredInstance.clientUser!.accountKey)\"}"]
+        
+        parseClientSharedInstance.queryAStudentLocation(parameters) { (success, studentLocations, errorString) in
+            guard success == true else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    print(errorString)
+                    self.displayError("Bad network connection.")
+                })
+                return
+            }
+            
+            if let studentLocations = studentLocations where studentLocations.count > 0 {
+                //user has a pin already
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.alertUserIfHasAPin(studentLocations[0])
+                })
+            } else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.moveToFindLoactionView(nil)
+                })
+            }
+        }
     }
     
+    //present modally to findLocationView
+    private func moveToFindLoactionView(objectId: String?) {
+        let findLocationVC = self.storyboard?.instantiateViewControllerWithIdentifier("FindLocationViewController") as! FindLocationViewController
+        findLocationVC.objectId = objectId
+        self.presentViewController(findLocationVC, animated: true, completion: nil)
+    }
+    
+    private func alertUserIfHasAPin(studentLocation: StudentLocation){
+        let message = "User \"\(self.udacityClientSahredInstance.clientUser!.firstName) \(self.udacityClientSahredInstance.clientUser!.lastName)\" Has Already Posted a Student Location. Would You Like to Overwrite Their Location?"
+        let alertVC = UIAlertController(title: nil, message: message, preferredStyle: .Alert)
+        let overwriteAction = UIAlertAction(title: "Override", style: .Default, handler: { (action) in
+            //next VC
+            let objectId = studentLocation.objectId
+            self.moveToFindLoactionView(objectId)
+        })
+        let cancleAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        alertVC.addAction(cancleAction)
+        alertVC.addAction(overwriteAction)
+        self.presentViewController(alertVC, animated: true, completion: nil)
+    }
+    
+    // MARK: - UserLocation
     func reloadUserLocation() {
         setUIEnabled(false)
         let parameters = [ParseClient.ParameterKeys.Limit: 100,
@@ -95,7 +140,7 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    // MARK: TableViewDelegate and TableViewDataSource
+    //MARK: - TableViewDelegate and TableViewDataSource
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let studentLocation = studentLocations[indexPath.row]
         if let url = NSURL(string: studentLocation.mediaURL) where UIApplication.sharedApplication().canOpenURL(url) {
