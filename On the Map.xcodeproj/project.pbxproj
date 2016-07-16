@@ -104,8 +104,8 @@
 				355910AC1D338446002F20BD /* LoginViewController.swift */,
 				355910AE1D3399EF002F20BD /* PinsMapViewController.swift */,
 				353044C21D34DBE6006C857E /* PinsTableViewController.swift */,
-				35CE702C1D388FB500A0D0D9 /* ShareLinkWithLocationViewController.swift */,
 				35C3648B1D362084001903D8 /* FindLocationViewController.swift */,
+				35CE702C1D388FB500A0D0D9 /* ShareLinkWithLocationViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

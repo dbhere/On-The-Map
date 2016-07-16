@@ -59,14 +59,12 @@ class PinsMapViewController: UIViewController, MKMapViewDelegate {
         UdacityClient.sharedInstance().logOutOfASession { (success, errorString) in
             guard success == true else {
                 dispatch_async(dispatch_get_main_queue()){
-                    self.displayError(errorString!)
+                    print(errorString!)
                 }
                 return
             }
-            dispatch_async(dispatch_get_main_queue(), {
-                self.dismissViewControllerAnimated(true, completion: nil)
-            })
         }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: - UserLocation
