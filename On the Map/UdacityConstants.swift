@@ -36,5 +36,10 @@ extension UdacityClient{
         static let Session: String = "session"
         static let Id: String = "id"
     }
+    
+    struct Facebook {
+        static let FacebookMobile = "facebook_mobile"
+        static let AccessToken = "access_token"
+    }
 
 }

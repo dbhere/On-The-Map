@@ -2,4 +2,102 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On the Map/UdacityConvenience.swift"
+            timestampString = "490518191.801349"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "loginWithFacebook(_:completionHandlerForLoginWithFacebook:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On the Map/UdacityClient.swift"
+            timestampString = "490519916.552093"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "taskForPostMethod(_:httpBody:completionHandlerForPost:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On the Map/LoginViewController.swift"
+            timestampString = "490544680.74884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "loginButton(_:didCompleteWithResult:error:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_the_Map.LoginViewController.loginButton (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.FBSDKLoginButton&gt;, didCompleteWithResult : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.FBSDKLoginManagerLoginResult&gt;, error : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSError&gt;) -&gt; ()"
+                  moduleName = "On the Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alex_zhang/Dropbox/ios_develop/iosNanoDegree/On%20the%20Map/On%20the%20Map/LoginViewController.swift"
+                  timestampString = "490544058.549808"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "484">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "On_the_Map.LoginViewController.(loginButton (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.FBSDKLoginButton&gt;, didCompleteWithResult : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.FBSDKLoginManagerLoginResult&gt;, error : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSError&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "On the Map"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Alex_zhang/Dropbox/ios_develop/iosNanoDegree/On%20the%20Map/On%20the%20Map/LoginViewController.swift"
+                  timestampString = "490544058.550007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "On the Map/PinsMapViewController.swift"
+            timestampString = "490544047.436752"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "logout()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

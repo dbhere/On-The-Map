@@ -57,12 +57,17 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     // MARK: Udacity
     func logout(){
-        udacityClientSahredInstance.logOutOfASession { (success, errorString) in
-            guard success == true else {
-                dispatch_async(dispatch_get_main_queue(), {
-                    print(errorString!)
-                })
-                return
+        if UdacityClient.sharedInstance().isFacebook{
+            let fbManager = FBSDKLoginManager()
+            fbManager.logOut()
+        }else{
+            UdacityClient.sharedInstance().logOutOfASession { (success, errorString) in
+                guard success == true else {
+                    dispatch_async(dispatch_get_main_queue()){
+                        print(errorString!)
+                    }
+                    return
+                }
             }
         }
         self.dismissViewControllerAnimated(true, completion: nil)

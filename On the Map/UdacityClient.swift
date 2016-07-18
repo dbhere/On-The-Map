@@ -11,8 +11,8 @@ import Foundation
 class UdacityClient: NSObject {
     //MARK: Properties
     var session = NSURLSession.sharedSession()
-    //var accountKey:String?
     var clientUser: UdacityUser?
+    var isFacebook: Bool = false
     
     override init(){
         super.init()

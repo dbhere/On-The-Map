@@ -29,6 +29,8 @@ class LoginViewController: UIViewController {
         
         //Add facebook login button
         let fbButton = FBSDKLoginButton()
+        fbButton.delegate = self
+        
         loginStackView.addArrangedSubview(fbButton)
     }
     override func viewWillAppear(animated: Bool) {
@@ -42,7 +44,7 @@ class LoginViewController: UIViewController {
         unsubscribeFromAllNotifications()
     }
     
-    //MARK: Actions
+    //MARK: - Actions
     @IBAction func loginUdacity(){
         userDidTapView()
         //check whether username/password is filled
@@ -72,6 +74,7 @@ class LoginViewController: UIViewController {
                     return
                 }
                 UdacityClient.sharedInstance().clientUser = udacityUser
+                UdacityClient.sharedInstance().isFacebook = false
             }
             
             let pinsTabBarVC = self.storyboard?.instantiateViewControllerWithIdentifier("PinsTabBarViewController") as! UITabBarController
@@ -138,5 +141,41 @@ extension LoginViewController: UITextFieldDelegate{
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension LoginViewController: FBSDKLoginButtonDelegate{
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        guard error == nil  && result.token != nil else{
+            return
+        }
+        UdacityClient.sharedInstance().loginWithFacebook(result.token.tokenString, completionHandlerForLoginWithFacebook: { (success, accountKey, errorString) in
+            guard success == true else {
+                dispatch_sync(dispatch_get_main_queue()){
+                    self.setUIEnabled(true)
+                    self.displayError(errorString!)
+                }
+                return
+            }
+            UdacityClient.sharedInstance().getPublicUserData(accountKey) { (success, udacityUser, error) in
+                guard success == true else {
+                    self.displayError(error!.localizedDescription)
+                    return
+                }
+                UdacityClient.sharedInstance().clientUser = udacityUser
+                UdacityClient.sharedInstance().isFacebook = true
+            }
+            
+            let pinsTabBarVC = self.storyboard?.instantiateViewControllerWithIdentifier("PinsTabBarViewController") as! UITabBarController
+            dispatch_async(dispatch_get_main_queue()){
+                self.setUIEnabled(true)
+                self.presentViewController(pinsTabBarVC, animated: true, completion: nil)
+            }
+        })
+        
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        
     }
 }

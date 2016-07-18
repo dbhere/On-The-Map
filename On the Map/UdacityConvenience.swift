@@ -55,7 +55,25 @@ extension UdacityClient {
             completionHandlerForLogOut(success: true, errorString: nil)
         }
     }
+    
+    //loggin with facebook
+    func loginWithFacebook(token: String, completionHandlerForLoginWithFacebook:(success: Bool, accountKey: String!, errorString: String?) -> Void){
+        let jsonBody = "{\"\(Facebook.FacebookMobile)\": {\"\(Facebook.AccessToken)\": \"\(token);\"}}"
+        taskForPostMethod(Methods.Session, httpBody: jsonBody) { (result, error) in
+            guard error == nil else{
+                completionHandlerForLoginWithFacebook(success: false, accountKey: nil,errorString: "Invalid Username or Password.")
+                return
+            }
+            guard let account = result[JSONResponseKeys.Account] as? [String: AnyObject], accountKey = account[JSONResponseKeys.AccountKey] as? String else {
+                print("cannot find key: \(JSONResponseKeys.AccountKey) in data: \(result)")
+                completionHandlerForLoginWithFacebook(success: false, accountKey: nil, errorString: "Invalid Username or Password.")
+                return
+            }
+            completionHandlerForLoginWithFacebook(success: true, accountKey: accountKey,errorString: nil)
+        }
+    }
 }
+
 
 
 

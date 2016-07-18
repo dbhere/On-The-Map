@@ -56,12 +56,17 @@ class PinsMapViewController: UIViewController, MKMapViewDelegate {
     
     // MARK: Udacity
     func logout(){
-        UdacityClient.sharedInstance().logOutOfASession { (success, errorString) in
-            guard success == true else {
-                dispatch_async(dispatch_get_main_queue()){
-                    print(errorString!)
+        if UdacityClient.sharedInstance().isFacebook{
+            let fbManager = FBSDKLoginManager()
+            fbManager.logOut()
+        }else{
+            UdacityClient.sharedInstance().logOutOfASession { (success, errorString) in
+                guard success == true else {
+                    dispatch_async(dispatch_get_main_queue()){
+                        print(errorString!)
+                    }
+                    return
                 }
-                return
             }
         }
         self.dismissViewControllerAnimated(true, completion: nil)
