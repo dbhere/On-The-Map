@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var udacityImageView: UIImageView!
+    @IBOutlet weak var loginStackView: UIStackView!
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -25,6 +26,10 @@ class LoginViewController: UIViewController {
         passwordTextField.delegate = self
         setUIEnabled(true)
         loginButton.layer.cornerRadius = 5
+        
+        //Add facebook login button
+        let fbButton = FBSDKLoginButton()
+        loginStackView.addArrangedSubview(fbButton)
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

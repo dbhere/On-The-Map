@@ -102,6 +102,7 @@
                     <connections>
                         <outlet property="activityIndicator" destination="ERg-fl-acr" id="VJc-Sc-fvH"/>
                         <outlet property="loginButton" destination="lwh-fK-wpL" id="E7w-FB-PEg"/>
+                        <outlet property="loginStackView" destination="HRx-Yx-JQU" id="qnj-cR-tvm"/>
                         <outlet property="passwordTextField" destination="AXb-tT-ilO" id="fll-nt-oxz"/>
                         <outlet property="udacityImageView" destination="iWe-yo-9WJ" id="PMo-FN-0Gg"/>
                         <outlet property="usernameTextField" destination="NbR-4l-tqV" id="j9R-A8-MkI"/>
