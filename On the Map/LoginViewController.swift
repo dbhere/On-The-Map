@@ -45,6 +45,11 @@ class LoginViewController: UIViewController {
             displayError("Empty username/password.")
             return
         }
+        guard Reachability.isConnectedToNetwork() == true else {
+            displayError("No Internet Connection.")
+            return
+        }
+        
         setUIEnabled(false)
         let userInfo = [UdacityClient.JSONBodyKeys.Username: usernameTextField.text!,
                         UdacityClient.JSONBodyKeys.Password: passwordTextField.text!]

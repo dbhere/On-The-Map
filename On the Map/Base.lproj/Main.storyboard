@@ -33,14 +33,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NbR-4l-tqV">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NbR-4l-tqV">
                                         <rect key="frame" x="0.0" y="200" width="560" height="35"/>
                                         <color key="backgroundColor" red="1" green="0.80378336380862936" blue="0.53601033402166798" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="1" green="0.24152446390000001" blue="0.22343323409999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXb-tT-ilO">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="AXb-tT-ilO">
                                         <rect key="frame" x="0.0" y="245" width="560" height="35"/>
                                         <color key="backgroundColor" red="1" green="0.80378336380000004" blue="0.53601033399999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="1" green="0.24152446393288141" blue="0.22343323413215799" alpha="1" colorSpace="calibratedRGB"/>
