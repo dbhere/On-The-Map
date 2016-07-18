@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		352802DE1D3CA6FC00AB9CC9 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352802DC1D3CA6FC00AB9CC9 /* FBSDKCoreKit.framework */; };
 		352802DF1D3CA6FC00AB9CC9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352802DD1D3CA6FC00AB9CC9 /* FBSDKLoginKit.framework */; };
-		352802E11D3CA74A00AB9CC9 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352802E01D3CA74A00AB9CC9 /* FBSDKShareKit.framework */; };
 		353044C01D34A006006C857E /* ParseConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353044BF1D34A006006C857E /* ParseConvenience.swift */; };
 		353044C31D34DBE6006C857E /* PinsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353044C21D34DBE6006C857E /* PinsTableViewController.swift */; };
 		355910741D321969002F20BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910731D321969002F20BD /* AppDelegate.swift */; };
@@ -52,7 +51,6 @@
 /* Begin PBXFileReference section */
 		352802DC1D3CA6FC00AB9CC9 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		352802DD1D3CA6FC00AB9CC9 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		352802E01D3CA74A00AB9CC9 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		352802E21D3CA78700AB9CC9 /* On the Map-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "On the Map-Bridging-Header.h"; sourceTree = "<group>"; };
 		353044BF1D34A006006C857E /* ParseConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseConvenience.swift; sourceTree = "<group>"; };
 		353044C21D34DBE6006C857E /* PinsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsTableViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 			files = (
 				352802DF1D3CA6FC00AB9CC9 /* FBSDKLoginKit.framework in Frameworks */,
 				352802DE1D3CA6FC00AB9CC9 /* FBSDKCoreKit.framework in Frameworks */,
-				352802E11D3CA74A00AB9CC9 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +110,6 @@
 		352802DB1D3CA6E100AB9CC9 /* FacebookSDK */ = {
 			isa = PBXGroup;
 			children = (
-				352802E01D3CA74A00AB9CC9 /* FBSDKShareKit.framework */,
 				352802DC1D3CA6FC00AB9CC9 /* FBSDKCoreKit.framework */,
 				352802DD1D3CA6FC00AB9CC9 /* FBSDKLoginKit.framework */,
 			);
