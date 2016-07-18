@@ -7,7 +7,7 @@
 //
 
 struct StudentLocation {
-    let objectId: String!
+    let objectId: String?
     let uniqueKey: String
     let firstName: String
     let lastName: String

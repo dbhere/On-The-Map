@@ -56,7 +56,7 @@ extension ParseClient {
     }
     
     func updateAStudentLocation(studentLocation: StudentLocation, completionHandlerForUpdateLocation: (success: Bool, errorString: String?) -> Void) {
-        let newMethod = subtituteKeyInMethod(Methods.UpdateStudentLocation, key: URLKeys.ObjectId, value: studentLocation.objectId)!
+        let newMethod = subtituteKeyInMethod(Methods.UpdateStudentLocation, key: URLKeys.ObjectId, value: studentLocation.objectId!)!
         let jsonBodyString = jsonBodyOfLocation(studentLocation)
         taskForPutMethod(newMethod, parameters: [:], jsonBody: jsonBodyString) { (results, error) in
             guard error == nil else {
