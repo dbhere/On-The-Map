@@ -42,7 +42,7 @@ class FindLocationViewController: UIViewController {
         localSearchTask.startWithCompletionHandler { (response, error) in
             func sendError() {
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.alertUser("Could Not Geocode the Strign.")
+                    self.alertUser("Could Not Geocode the String.")
                     self.locationTextView.text = self.textPlaceHolder
                     self.setUIEnabled(true)
                 })
