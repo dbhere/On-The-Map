@@ -135,6 +135,7 @@ class LoginViewController: UIViewController {
         usernameTextField.enabled = enabled
         passwordTextField.enabled = enabled
         loginButton.enabled = enabled
+        facebookLoginButton.enabled = enabled
         if enabled{
             loginButton.alpha = 1.0
             activityIndicator.stopAnimating()

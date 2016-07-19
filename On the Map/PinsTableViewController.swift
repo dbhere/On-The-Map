@@ -12,7 +12,6 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
     //MARK: Properties
     var parseClientSharedInstance: ParseClient!
     var udacityClientSahredInstance: UdacityClient!
-    var studentLocations = [StudentLocation]()
     
     //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -135,7 +134,6 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
                 })
                 return
             }
-            self.studentLocations = self.parseClientSharedInstance.studentLocations
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView.reloadData()
                 self.setUIEnabled(true)
@@ -145,23 +143,25 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     //MARK: - TableViewDelegate and TableViewDataSource
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let studentLocation = studentLocations[indexPath.row]
+        let studentLocation = parseClientSharedInstance.studentLocations[indexPath.row]
         if let url = NSURL(string: studentLocation.mediaURL) where UIApplication.sharedApplication().canOpenURL(url) {
             UIApplication.sharedApplication().openURL(url)
         } else {
             displayError("Invalid URL.")
         }
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return studentLocations.count
+        return parseClientSharedInstance.studentLocations.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("pinTableViewCell")!
-        let studentLocation = studentLocations[indexPath.row]
+        let studentLocation = parseClientSharedInstance.studentLocations[indexPath.row]
         cell.textLabel?.text = "\(studentLocation.firstName) \(studentLocation.lastName)"
         cell.detailTextLabel?.text = studentLocation.mediaURL
         cell.imageView?.image = UIImage(named: "pin")
         return cell
     }
+    
 }

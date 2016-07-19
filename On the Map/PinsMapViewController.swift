@@ -51,7 +51,7 @@ class PinsMapViewController: UIViewController, MKMapViewDelegate {
     
     //MARK: Action
     @IBAction func backPinsView(segue: UIStoryboardSegue){
-        self.reloadUserLocation()
+        reloadUserLocation()
     }
     
     // MARK: Udacity
