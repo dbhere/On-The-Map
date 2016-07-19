@@ -18,6 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var udacityImageView: UIImageView!
     @IBOutlet weak var facebookLoginButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     //MARK: Lifecycle
     override func viewDidLoad() {
@@ -124,24 +125,20 @@ class LoginViewController: UIViewController {
     }
     
     //MARK: UIHelpers
-    private func displayError(error: String){
-        let alertVC = UIAlertController(title: nil, message: error, preferredStyle: .Alert)
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
-        alertVC.addAction(dismissAction)
-        self.presentViewController(alertVC, animated: true, completion: nil)
-    }
-    
     private func setUIEnabled(enabled: Bool){
         usernameTextField.enabled = enabled
         passwordTextField.enabled = enabled
         loginButton.enabled = enabled
         facebookLoginButton.enabled = enabled
+        signUpButton.enabled = enabled
         if enabled{
             loginButton.alpha = 1.0
+            facebookLoginButton.alpha = 1.0
             activityIndicator.stopAnimating()
             passwordTextField.text = ""
         }else {
             loginButton.alpha = 0.5
+            facebookLoginButton.alpha = 0.5
             activityIndicator.startAnimating()
         }
     }

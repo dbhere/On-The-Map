@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		352802DE1D3CA6FC00AB9CC9 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352802DC1D3CA6FC00AB9CC9 /* FBSDKCoreKit.framework */; };
 		352802DF1D3CA6FC00AB9CC9 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352802DD1D3CA6FC00AB9CC9 /* FBSDKLoginKit.framework */; };
+		352E12431D3E2CF000006375 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352E12421D3E2CF000006375 /* UIViewControllerExtension.swift */; };
 		353044C01D34A006006C857E /* ParseConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353044BF1D34A006006C857E /* ParseConvenience.swift */; };
 		353044C31D34DBE6006C857E /* PinsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353044C21D34DBE6006C857E /* PinsTableViewController.swift */; };
 		355910741D321969002F20BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355910731D321969002F20BD /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		352802DC1D3CA6FC00AB9CC9 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		352802DD1D3CA6FC00AB9CC9 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		352802E21D3CA78700AB9CC9 /* On the Map-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "On the Map-Bridging-Header.h"; sourceTree = "<group>"; };
+		352E12421D3E2CF000006375 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		353044BF1D34A006006C857E /* ParseConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseConvenience.swift; sourceTree = "<group>"; };
 		353044C21D34DBE6006C857E /* PinsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinsTableViewController.swift; sourceTree = "<group>"; };
 		355910701D321969002F20BD /* On the Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On the Map.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				353044C21D34DBE6006C857E /* PinsTableViewController.swift */,
 				35C3648B1D362084001903D8 /* FindLocationViewController.swift */,
 				35CE702C1D388FB500A0D0D9 /* ShareLinkWithLocationViewController.swift */,
+				352E12421D3E2CF000006375 /* UIViewControllerExtension.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				355910B21D34877C002F20BD /* StudentLocation.swift in Sources */,
 				353044C31D34DBE6006C857E /* PinsTableViewController.swift in Sources */,
 				353044C01D34A006006C857E /* ParseConvenience.swift in Sources */,
+				352E12431D3E2CF000006375 /* UIViewControllerExtension.swift in Sources */,
 				355910AD1D338446002F20BD /* LoginViewController.swift in Sources */,
 				35CE702D1D388FB500A0D0D9 /* ShareLinkWithLocationViewController.swift in Sources */,
 				355910B61D3488AE002F20BD /* ParseConstants.swift in Sources */,

@@ -42,13 +42,6 @@ class PinsMapViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    func displayError(errorString: String){
-        let alertVC = UIAlertController(title: nil, message: errorString, preferredStyle: .Alert)
-        let alertAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
-        alertVC.addAction(alertAction)
-        self.presentViewController(alertVC, animated: true, completion: nil)
-    }
-    
     //MARK: Action
     @IBAction func backPinsView(segue: UIStoryboardSegue){
         reloadUserLocation()

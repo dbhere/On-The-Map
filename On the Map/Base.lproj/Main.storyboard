@@ -116,6 +116,7 @@
                         <outlet property="facebookLoginButton" destination="PUu-To-FRb" id="JOD-cp-LH6"/>
                         <outlet property="loginButton" destination="lwh-fK-wpL" id="E7w-FB-PEg"/>
                         <outlet property="passwordTextField" destination="AXb-tT-ilO" id="fll-nt-oxz"/>
+                        <outlet property="signUpButton" destination="8Gd-v1-KLM" id="fMp-3N-mPw"/>
                         <outlet property="udacityImageView" destination="iWe-yo-9WJ" id="PMo-FN-0Gg"/>
                         <outlet property="usernameTextField" destination="NbR-4l-tqV" id="j9R-A8-MkI"/>
                     </connections>

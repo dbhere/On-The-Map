@@ -42,13 +42,6 @@ class PinsTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func displayError(errorString: String) {
-        let alertVC = UIAlertController(title: nil, message: errorString, preferredStyle: .Alert)
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
-        alertVC.addAction(dismissAction)
-        self.presentViewController(alertVC, animated: true, completion: nil)
-    }
-    
     //MARK: Action
     @IBAction func backPinsView(segue: UIStoryboardSegue){
         self.reloadUserLocation()

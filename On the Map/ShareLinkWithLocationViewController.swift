@@ -38,7 +38,7 @@ class ShareLinkWithLocationViewController: UIViewController {
     
     @IBAction func submitLocation(){
         guard checkUrlValid(urlTextView.text) == true else {
-            alertUser("Enter a Valid Link.")
+            displayError("Enter a Valid Link.")
             urlTextView.text = self.textPlaceHolder
             return
         }
@@ -58,7 +58,7 @@ class ShareLinkWithLocationViewController: UIViewController {
                 guard success == true else {
                     dispatch_async(dispatch_get_main_queue(), {
                         print(errorString!)
-                        self.alertUser("Submit Faild. Try again later.")
+                        self.displayError("Submit Faild. Try again later.")
                         self.setUIEnabled(true)
                     })
                     return
@@ -73,7 +73,7 @@ class ShareLinkWithLocationViewController: UIViewController {
                 guard success == true else {
                     dispatch_async(dispatch_get_main_queue(), {
                         print(errorString!)
-                        self.alertUser("Submit Faild. Try again later.")
+                        self.displayError("Submit Faild. Try again later.")
                         self.setUIEnabled(true)
                     })
                     return
@@ -87,20 +87,13 @@ class ShareLinkWithLocationViewController: UIViewController {
     
     //MARK: - UIHelpers
     private func checkUrlValid(urlString: String) -> Bool{
-        if urlString == "" || urlString == self.textPlaceHolder{
+        if urlString == "" || urlString == self.textPlaceHolder {
             return false
         }
         guard let url = NSURL(string: urlString) where UIApplication.sharedApplication().canOpenURL(url) else {
             return false
         }
         return true
-    }
-    
-    private func alertUser(errorString: String){
-        let alertVC = UIAlertController(title: nil, message: errorString, preferredStyle: .Alert)
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
-        alertVC.addAction(dismissAction)
-        self.presentViewController(alertVC, animated: true, completion: nil)
     }
     
     private func setUIEnabled(enabled: Bool){
@@ -120,7 +113,7 @@ class ShareLinkWithLocationViewController: UIViewController {
         
         let annotation = MKPointAnnotation()
         guard let userCoordinate = userCoordinate else {
-            alertUser("Cannot find userLocation On the map.")
+            displayError("Cannot find userLocation On the map.")
             return
         }
         annotation.coordinate = userCoordinate
@@ -139,7 +132,7 @@ extension ShareLinkWithLocationViewController: UITextViewDelegate {
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n"{
-            if textView.text == "" {
+            if textView.text == "" || textView.text == "https://" {
                 textView.text = self.textPlaceHolder
             }
             textView.resignFirstResponder()

@@ -30,7 +30,7 @@ class FindLocationViewController: UIViewController {
     //MARK: - Action
     @IBAction func findOnTheMap() {
         if locationTextView.text == self.textPlaceHolder || locationTextView.text.isEmpty {
-            alertUser("Must Enter a location.")
+            displayError("Must Enter a location.")
             return
         }
         setUIEnabled(false)
@@ -42,7 +42,7 @@ class FindLocationViewController: UIViewController {
         localSearchTask.startWithCompletionHandler { (response, error) in
             func sendError() {
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.alertUser("Could Not Geocode the String.")
+                    self.displayError("Could Not Geocode the String.")
                     self.locationTextView.text = self.textPlaceHolder
                     self.setUIEnabled(true)
                 })
@@ -79,12 +79,6 @@ class FindLocationViewController: UIViewController {
     }
     
     //MARK: - UIHelpers
-    private func alertUser(errorString: String){
-        let alertVC = UIAlertController(title: nil, message: errorString, preferredStyle: .Alert)
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
-        alertVC.addAction(dismissAction)
-        self.presentViewController(alertVC, animated: true, completion: nil)
-    }
     
     private func setUIEnabled(enabled: Bool){
         findButton.enabled = enabled
