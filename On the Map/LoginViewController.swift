@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
     //MARK: Properties
     var keyboardOnScreen: Bool = false
-    //MARK: Outlets
+    //MARK: - Outlets
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var facebookLoginButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     
-    //MARK: Lifecycle
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameTextField.delegate = self
@@ -37,6 +37,13 @@ class LoginViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromAllNotifications()
+    }
+    
+    //MARK: - Login helpers
+    private func moveToTabBarView(){
+        let pinsTabBarVC = self.storyboard?.instantiateViewControllerWithIdentifier("PinsTabBarViewController") as! UITabBarController
+        setUIEnabled(true)
+        presentViewController(pinsTabBarVC, animated: true, completion: nil)
     }
     
     //MARK: - Actions
@@ -72,10 +79,8 @@ class LoginViewController: UIViewController {
                 UdacityClient.sharedInstance().isFacebook = false
             }
             
-            let pinsTabBarVC = self.storyboard?.instantiateViewControllerWithIdentifier("PinsTabBarViewController") as! UITabBarController
             dispatch_async(dispatch_get_main_queue()){
-                self.setUIEnabled(true)
-                self.presentViewController(pinsTabBarVC, animated: true, completion: nil)
+                self.moveToTabBarView()
             }
         }
     }
@@ -93,23 +98,21 @@ class LoginViewController: UIViewController {
                 guard success == true else {
                     dispatch_sync(dispatch_get_main_queue()){
                         self.setUIEnabled(true)
-                        self.displayError(errorString!)
+                        self.displayError("Cannot login by Facebook.")
                     }
                     return
                 }
                 UdacityClient.sharedInstance().getPublicUserData(accountKey) { (success, udacityUser, error) in
                     guard success == true else {
-                        self.displayError(error!.localizedDescription)
+                        self.displayError("Cannot login by Facebook.")
                         return
                     }
                     UdacityClient.sharedInstance().clientUser = udacityUser
                     UdacityClient.sharedInstance().isFacebook = true
                 }
                 
-                let pinsTabBarVC = self.storyboard?.instantiateViewControllerWithIdentifier("PinsTabBarViewController") as! UITabBarController
                 dispatch_async(dispatch_get_main_queue()){
-                    self.setUIEnabled(true)
-                    self.presentViewController(pinsTabBarVC, animated: true, completion: nil)
+                    self.moveToTabBarView()
                 }
             })
         }
@@ -149,7 +152,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    //MARK: keyboard hide and show related functions
+    //MARK: - keyboard hide and show related functions
     func keyboardWillShow(notification:NSNotification){
         udacityImageView.hidden = true
     }
@@ -165,6 +168,7 @@ class LoginViewController: UIViewController {
     }
 }
 
+//MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate{
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()

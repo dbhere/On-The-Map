@@ -21,7 +21,6 @@ class ParseClient: NSObject {
     //Get
     func taskForGetMethod(method: String, parameters:[String: AnyObject], completionHandlerForGetMethod:(results: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask{
         let request = basicMutableUrlRequest(method, parameters: parameters)
-        
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             self.basicTaskCheckProcess("taskForGetMethod", data: data, response: response, error: error, completionHandler: completionHandlerForGetMethod)
         }
@@ -87,7 +86,7 @@ class ParseClient: NSObject {
             , completionHandlerForConvertData: completionHandler)
     }
     
-    //MARK: Heplers
+    //MARK: - Heplers
     func subtituteKeyInMethod(method: String, key: String, value: String) -> String? {
         if method.rangeOfString("<\(key)>") != nil {
             return method.stringByReplacingOccurrencesOfString("<\(key)>", withString: value)

@@ -23,6 +23,7 @@ class PinsMapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         parseClientSharedInstance = ParseClient.sharedInstance()
         udacityClientSahredInstance = UdacityClient.sharedInstance()
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .Plain, target: self, action: #selector(logout))
         navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: #selector(reloadUserLocation)),
             UIBarButtonItem(image: UIImage(named: "pin"), style: .Plain, target: self, action: #selector(addUserPin))]

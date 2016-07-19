@@ -8,9 +8,9 @@
 
 extension UdacityClient{
     struct Constants {
-        static let ApiScheme: String = "https"
-        static let ApiHost: String = "www.udacity.com"
-        static let ApiPath: String = "/api"
+        static let ApiScheme = "https"
+        static let ApiHost = "www.udacity.com"
+        static let ApiPath = "/api"
     }
     
     struct Methods {
@@ -28,13 +28,13 @@ extension UdacityClient{
     }
     
     struct JSONResponseKeys {
-        static let Account: String = "account"
-        static let User: String = "user"
-        static let AccountKey: String = "key"
-        static let LastName: String = "last_name"
-        static let FirstName: String = "first_name"
-        static let Session: String = "session"
-        static let Id: String = "id"
+        static let Account = "account"
+        static let User = "user"
+        static let AccountKey = "key"
+        static let LastName = "last_name"
+        static let FirstName = "first_name"
+        static let Session = "session"
+        static let Id = "id"
     }
     
     struct Facebook {
